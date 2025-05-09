@@ -37,7 +37,7 @@ get("/:from_currency/:to_currency") do
 
 @raw_response = HTTP.get(@url)
 @string_response = @raw_response.to_s
-@parsed_response = JSON.parce(@string_response)
+@parsed_response = JSON.parse(@string_response)
 
 @amount = @parced_response.fetch("result")
 
