@@ -5,7 +5,7 @@ require "dotenv"
 
 get("/") do
   
-  @raw_response = HTTP.get("https://api.exchangerate.host/list?access_key="+"<%= ENV.fetch("EXCHANGE_RATE_KEY") %>")
+  @raw_response = HTTP.get("https://api.exchangerate.host/list?access_key=#{ENV.fetch("EXCHANGE_RATE_KEY")}")
 
   @string_response = @raw_response.to_s
   @parsed_response = JSON.parse(@string_response)
