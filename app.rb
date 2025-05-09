@@ -33,7 +33,8 @@ get("/:from_currency/:to_currency") do
 @from = params.fetch("from_currency")
 @to = params.fetch("to_currency")
 
-@url = 
+@url = "https://api.exchangerate.host/convert?access_key=#{ENV.fetch("EXCHANGE_RATE_KEY").chomp}&from=#{@from}&to=#{@to}&amount=1"
+
 
 
 HTTP.get(@url)
