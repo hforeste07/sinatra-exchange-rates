@@ -33,6 +33,8 @@ get("/:from_currency/:to_currency") do
 @to = params.fetch("to_currency")
 
 @url = 
+
+
 HTTP.get(@url)
   erb(:step_two)
 end
