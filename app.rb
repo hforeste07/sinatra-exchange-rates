@@ -4,7 +4,7 @@ require "http"
 
 get("/") do
   
-  @raw_response = HTTP.get("https://api.exchangerate.host/list?access_key=#{env.fetch("EXCHANGE_RATE_KEY").chomp}")
+  @raw_response = HTTP.get("https://api.exchangerate.host/list?access_key=#{ENV.fetch("EXCHANGE_RATE_KEY").chomp}")
 
   @string_response = @raw_response.to_s
   @parsed_response = JSON.parse(@string_response)
@@ -17,7 +17,7 @@ end
 get("/:from_currency") do
 @the_sybol = params.fetch("from_currency")
 
-@url = "https://api.exchangerate.host/list?access_key=#{env.fetch("EXCHANGE_RATE_KEY").chomp}"
+@url = "https://api.exchangerate.host/list?access_key=#{ENV.fetch("EXCHANGE_RATE_KEY").chomp}"
 
 @raw_response = HTTP.get(@url)
 @string_response = @raw_response.to_s
