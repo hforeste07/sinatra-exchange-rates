@@ -1,5 +1,7 @@
 <h1>Convert <%= @the_symbol %> to USD</h1>
 
+<p> Go <a href="/<%=@from %>">back</a></p>
+
 <% ENV.fetch("EXCHANGE_RATE_KEY") %>
 
 <%= params %>>
@@ -8,6 +10,6 @@
 
   <% @currencies.keys.each do |symbol| %>
     <li>
-    <a href="/<%= @the_symbol %>/<%= symbol %>">Convert 1 <%= symbol %> to...</a></li>
+    <a href="/<%= @the_symbol %>/<%= symbol %>">Convert 1 <%= @the_symbol %> to <%= @symbol %>...</a></li>
   <% end %>
 </ul>
